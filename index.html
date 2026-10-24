@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f8fc">
+  <meta name="description" content="PennyWise helps you make sense of your money, budgets, and savings goals.">
+  <title>PennyWise</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#" data-page="dashboard"><span class="brand-mark">₱</span><span>Penny<span class="brand-light">Wise</span></span></a>
+      <p class="nav-caption">WORKSPACE</p>
+      <nav class="side-nav">
+        <button class="nav-link active" data-page="dashboard"><span class="nav-icon">⌂</span>Overview</button>
+        <button class="nav-link" data-page="transactions"><span class="nav-icon">↕</span>Transactions</button>
+        <button class="nav-link" data-page="budgets"><span class="nav-icon">◉</span>Budgets</button>
+        <button class="nav-link" data-page="goals"><span class="nav-icon">◎</span>Savings goals</button>
+        <button class="nav-link" data-page="accounts"><span class="nav-icon">▤</span>Accounts</button>
+        <button class="nav-link" data-page="reports"><span class="nav-icon">▥</span>Reports</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="side-tip"><span class="tip-icon">✦</span><strong>Small steps add up.</strong><p>A little clarity can go a long way.</p></div>
+        <button class="nav-link" data-page="settings"><span class="nav-icon">⚙</span>Settings</button>
+        <div class="local-note">🔒 Your money data stays on this device.</div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <div class="topbar-title"><button class="mobile-brand" data-page="dashboard">₱ <span>PennyWise</span></button><span class="date-label" id="today-label"></span></div>
+        <div class="topbar-actions">
+          <button class="icon-button" id="theme-toggle" aria-label="Toggle light and dark theme" title="Toggle theme">◐</button>
+          <button class="profile-chip" data-page="settings"><span class="avatar" id="avatar-initials">PW</span><span class="profile-name" id="header-name">My wallet</span></button>
+        </div>
+      </header>
+      <section id="page-content" class="page-content" aria-live="polite"></section>
+    </main>
+  </div>
+  <nav class="bottom-nav" aria-label="Mobile navigation">
+    <button class="nav-link active" data-page="dashboard"><span class="nav-icon">⌂</span><span>Home</span></button>
+    <button class="nav-link" data-page="transactions"><span class="nav-icon">↕</span><span>Activity</span></button>
+    <button class="quick-add" id="mobile-add" aria-label="Add transaction">＋</button>
+    <button class="nav-link" data-page="budgets"><span class="nav-icon">◉</span><span>Budgets</span></button>
+    <button class="nav-link" data-page="goals"><span class="nav-icon">◎</span><span>Goals</span></button>
+    <button class="nav-link" data-action="mobile-more" aria-label="Open more pages"><span class="nav-icon">···</span><span>More</span></button>
+  </nav>
+  <dialog id="app-dialog" aria-labelledby="dialog-title"><div id="dialog-content"></div></dialog>
+  <div id="toast-region" class="toast-region" aria-live="polite" aria-atomic="true"></div>
+  <input type="file" id="restore-file" accept="application/json,.json" hidden>
+  <script src="script.js"></script>
+</body>
+</html>
